@@ -1,16 +1,15 @@
 # 7. Water Overflow
 
-capacity = 225
+
+number_of_pipes = int(input())
+capacity = 255
 liters_poured = 0
 
-n = int(input())
-
-for _ in range(n):
+for _ in range(number_of_pipes):
     liters = int(input())
-
-    if capacity - liters >= 0:
-        capacity += - liters
+    if liters < capacity and liters_poured + liters <= capacity:
         liters_poured += liters
+
     else:
         print("Insufficient capacity!")
 
