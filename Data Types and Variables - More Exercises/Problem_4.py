@@ -1,6 +1,5 @@
 # 4. Balanced Brackets
 
-
 number_fo_lines = int(input())
 memory = []
 
@@ -12,6 +11,15 @@ for _ in range(number_fo_lines):
     memory.append(strings)
     for part in memory:
         if first_check:
-            pass
+            if part == ")":
+                second_check = True
+            else:
+                pass
         elif part == "(":
             first_check = True
+
+
+if first_check and second_check:
+    print("BALANCED")
+else:
+    print("UNBALANCED")
