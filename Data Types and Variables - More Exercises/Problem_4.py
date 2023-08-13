@@ -1,17 +1,21 @@
 # 4. Balanced Brackets
 
-number_fo_lines = int(input())
-balance = 0
+def is_balanced(expression):
+    stack = []
+    for char in expression:
+        if char == "(":
+            stack.append(char)
+        elif char == ")":
+            if not stack or stack[-1] != "(":
+                return False
+            stack.pop()
+    return not stack
 
-for _ in range(number_fo_lines):
-    word = input()
-    for words in word:
-        if words == "(":
-            balance +=1
-        elif words == ")":
-            balance -= 1
+n = int(input())
 
-if balance == 0:
-    print("BALANCED")
-else:
-    print("UNBALANCED")
+for _ in range(n):
+    line = input().strip()
+    if is_balanced(line):
+        print("BALANCED")
+    else:
+        print("UNBALANCED")
