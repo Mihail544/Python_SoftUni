@@ -1,5 +1,7 @@
 # 4. Balanced Brackets
 
+# I will need to fix it :(
+
 n = int(input())
 
 stack = []
