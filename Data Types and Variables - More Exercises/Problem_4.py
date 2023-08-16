@@ -21,3 +21,5 @@ if len(stack) == 0:
     print("BALANCED")
 else:
     print("UNBALANCED")
+
+print("done")
