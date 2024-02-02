@@ -2,22 +2,23 @@
 
 # I will need to fix it :(
 
-n = int(input())
+def check_brackets(input_string):
+    stack = []
+    for char in input_string:
+        if char == "(":
+            stack.append(char)
+        elif char == ")":
+            if not stack:
+                return False
+            last_bracket = stack.pop()
+            if last_bracket != "(":
+                return False
+    return not stack
 
-stack = []
 
-for _ in range(n):
-    line = input()
+user_input = input("Enter a string with brackets: ")
 
-    if line == "(":
-        stack.append("(")
-    elif line == ")":
-        if len(stack) == 0 or stack[-1] != "(":
-            print("UNBALANCED")
-            break
-        stack.pop()
-
-if len(stack) == 0:
-    print("BALANCED")
+if check_brackets(user_input):
+    print("Brackets are closed correctly.")
 else:
-    print("UNBALANCED")
+    print("Brackets are not closed correctly.")
