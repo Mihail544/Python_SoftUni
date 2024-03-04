@@ -1,24 +1,43 @@
 # 4. Balanced Brackets
 
-# I will need to fix it :(
+n = int(input())
 
-def check_brackets(input_string):
-    stack = []
-    for char in input_string:
-        if char == "(":
-            stack.append(char)
-        elif char == ")":
-            if not stack:
+Balance = True
+my_box = []
+my_check_box = []
+
+for symbols in range(n):
+    symbol = input()
+    if symbol == "(" or symbol == ")":
+        my_box.append(symbol)
+
+
+def main(brackets):
+    for bracket in brackets:
+
+        if len(my_check_box) == 0 and bracket == "(":
+            my_check_box.append(bracket)
+            continue
+        elif len(my_check_box) == 0 and bracket == ")":
+            return False
+
+        if bracket == "(" and len(my_check_box) != 0:
+            if my_check_box[-1] == ")":
+                my_check_box.append(bracket)
+                continue
+            else:
                 return False
-            last_bracket = stack.pop()
-            if last_bracket != "(":
+
+        if bracket == ")" and len(my_check_box) != 0:
+            if my_check_box[-1] == "(":
+                my_check_box.append(bracket)
+                continue
+            else:
                 return False
-    return not stack
+    return True
 
 
-user_input = input("Enter a string with brackets: ")
-
-if check_brackets(user_input):
-    print("Brackets are closed correctly.")
+if main(my_box):
+    print("BALANCED")
 else:
-    print("Brackets are not closed correctly.")
+    print("UNBALANCED")
