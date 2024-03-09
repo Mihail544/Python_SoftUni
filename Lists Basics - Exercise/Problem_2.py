@@ -1,4 +1,4 @@
-# 3. Football Cards
+# 2. Multiples List
 
 factor = int(input())
 count = int(input())
