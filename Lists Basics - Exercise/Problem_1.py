@@ -5,12 +5,10 @@ numbers = input()
 my_list = numbers.split()
 my_list = [int(number) for number in my_list]
 
-for number in my_list:
-    if number < 0:
-        number_index = my_list.index(number)
-        my_list[number_index] = abs(number)
+for index, key in enumerate(my_list):
+    if key < 0:
+        my_list[index] = abs(key)
     else:
-        number_index = my_list.index(number)
-        my_list[number_index] = -abs(number)
+        my_list[index] = -abs(key)
 
 print(my_list)
