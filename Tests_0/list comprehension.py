@@ -10,6 +10,5 @@ my_list = ["Gosho e gotin", "Mi6o e po gotin", "Nema nikoi jiv"]
 # После се чете for words като това новото е нещото което ще заема памета на думите през които ще преминем.
 # return е всичко на което условието му съвпада и то става част от първото words и заема информацията на новият лист
 
-
 my_list = [words for words in my_list if "Mi6o" in words]
 print(my_list)
