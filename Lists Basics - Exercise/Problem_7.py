@@ -1,34 +1,37 @@
 # 7. * Easter Gifts
 
-planed_gifts = ["Eggs", "StuffedAnimal", "Cozonac", "Sweets", "EasterBunny", "Eggs", "Clothes"]
-commands_deck = ["OutOfStock Eggs", "Required Spoon 2", "JustInCase ChocolateEgg", "No Money"]
+planned_gifts = input().split()
 
-# while True:
-#    command = input()
-#    commands_deck.append(command)
-#    if command != "No Money":
-#        pass
-#    else:
-#        break
+while True:
 
-print(planed_gifts)
-print(commands_deck)
+    command_input = input()
+
+    if command_input != "No Money":
+        command = command_input.split()
+
+        if command[0] == "OutOfStock":
+            gift_name = command[1]
+
+            for number in range(len(planned_gifts)):
+                if planned_gifts[number] == gift_name:
+                    planned_gifts[number] = "None"
+
+        elif command[0] == "Required":
+            new_gift_name = command[1]
+            old_gift_index = int(command[2])
+
+            if 0 <= old_gift_index < len(planned_gifts):
+
+                planned_gifts[old_gift_index] = new_gift_name
+
+        elif command[0] == "JustInCase":
+            gift_name = command[1]
+            planned_gifts[-1] = gift_name
+
+    else:
+        break
 
 
+remaining_gifts = [gift for gift in planned_gifts if gift != "None"]
 
-for command in commands_deck:
-    if command[:10] == "OutOfStock":
-        gift_to_None = command[11:]
-
-        for gift in planed_gifts:
-            if gift == gift_to_None:
-                planed_gifts[gift] = None
-
-    elif command[:8] == "Required":
-        print("Required")
-    elif command[:10] == "JustInCase":
-        print("JustInCase")
-    elif command == "No Money":
-        print("No Money")
-
-print(planed_gifts)
+print(" ".join(remaining_gifts))
