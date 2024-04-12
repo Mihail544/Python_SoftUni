@@ -1,4 +1,4 @@
-# 5 Tic-Tac-Toe
+# 5. Tic-Tac-Toe
 
 board = ["-", "-", "-",
          "-", "-", "-",
