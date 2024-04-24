@@ -1,6 +1,6 @@
 # 8. Palindrome Integers
 
-numbers = input().split(", ") # test: 32, 2, 232, 1010
+numbers = input().split(", ")  # test: 32, 2, 232, 1010
 
 
 def palindrome_checker(to_check):
