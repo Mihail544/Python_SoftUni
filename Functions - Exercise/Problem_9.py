@@ -1,7 +1,7 @@
 # 9. Password Validator
 
 def password_valid_check(password):
-    banned_symbols = [",", ".", "!", "?", ";", "@", "#",
+    banned_symbols = [",", ".", "!", "?", ";", "@", "#",                 # Can use isalnum() !
                       "$", "%", "^", "&", "*", "-", "_",
                       "(", ")", "[", "]", "{", "}", "<", ">"]
 
